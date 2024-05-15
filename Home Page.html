@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><img src="Logo.png" width="70" height="70" class="logo-image">
+            <ul class="image-list">
+                <li><a class="image-button" href="#"><img src="Home Icon Selected.svg" width="30" height="30"></a></li>
+                <li><a class="image-button" href="following page.html"><img src="Following Icon.svg" width="30" height="30"/></a></li>
+                <li><a class="image-button" href="Answer_page.html"><img src="Answer Icon.svg" width="30" height="30"/></a></li>
+                <li><a class="image-button" href="#"><img src="Community Icon.svg" width="30" height="30"/></a></li>
+                <li><a class="image-button" href="#"><img src="Notifications Icon.svg" width="30" height="30"/></a></li>
+            </ul>
+            <form>
+                <input type="text" placeholder="Search Posts">
+              </form>
+              <div class="Ask">
+                <button type="button">ASK A QUESTION</button>
+              </div>
+        </div>
+    </nav>
+    <div class="content">
+        <button type="my button">Ask</button>
+        <button type="my button">Answer</button>
+        <button type="my button">Post</button>
+    </div>
+    <div class="box">
+        <img src="Profile Picture.svg" alt="Picture" width="50" height="50">
+        <img src="Guy at zoo.webp" class= "overlay" alt="Picture" width="700" height="500">
+        <h1>JOHN DAVID</h1>
+  <p>Mon</p><br>
+  <p2> Me at the zoo.</p2>
+    </div>
+    <div class="like-dislike-buttons">
+        <button id="like-button" class="like-button">Upvote</button>
+        <span id="like-count">0</span>
+        <button id="dislike-button" class="dislike-button">Downvote</button>
+        <span id="dislike-count">0</span>
+      </div>
+      <div class="community">
+        <main>
+          
+            <ul class="list">
+              <button> + Create Community</button><br><br><br>
+    
+               <li> Health</li><hr><br><br>
+    
+                <li>Sport</li><hr><br><br>
+    
+                <li>Food</li><hr><br><br>
+    
+                <li>Movies</li><hr><br><br>
+    
+                <li>Technology</li><hr><br><br>
+    
+                <li>Writing</li><hr><br><br>
+    
+                <li>Music</li><hr><br><br>
+            </ul>
+        
+        </main>
+        </div>
+    
+<script>
+    const likeButton = document.getElementById('like-button');
+const dislikeButton = document.getElementById('dislike-button');
+const likeCount = document.getElementById('like-count');
+const dislikeCount = document.getElementById('dislike-count');
+
+let likeCountValue = parseInt(likeCount.innerText);
+let dislikeCountValue = parseInt(dislikeCount.innerText);
+
+likeButton.addEventListener('click', () => {
+  likeCountValue++;
+  likeCount.innerText = likeCountValue;
+});
+
+dislikeButton.addEventListener('click', () => {
+  dislikeCountValue++;
+  dislikeCount.innerText = dislikeCountValue;
+});
+</script>
+</body>
+</html>

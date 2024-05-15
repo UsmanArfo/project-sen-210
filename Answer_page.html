@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Styles for the question platform */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+
+            margin-left: 15px;
+    margin-right: 15px;
+    background-color: #A0D5DF;
+
+        #questions-container {
+            max-width: 500px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .question p {
+            flex-grow: 1;
+            font-size: 16px;
+        }
+        .question button {
+            margin-left: 10px;
+            background-color: #1E94AC;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .question input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .barrier {
+            border-top: 2px solid #1E94AC;
+            margin-top: 20px;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="questions-container">
+        <h2>Questions For You</h2>
+        <div class="barrier"></div>
+        <div class="question">
+            <p>1. What is life?</p>
+        </div>
+        <div class="question">
+            <button onclick="toggleInputBox(this)">Answer</button>
+            <button onclick="togglefollow(this)">Follow</button>
+            <button onclick="togglepass(this)">Pass</button>
+        </div>
+
+        <!-- Turquoise barrier -->
+        <div class="barrier"></div>
+
+        <div class="question">
+            <p>2. What is death?</p>
+        </div>
+        <div class="question">
+            <button onclick="toggleInputBox(this)">Answer</button>
+            <button onclick="togglefollow(this)">Follow</button>
+            <button onclick="togglepass(this)">Pass</button>
+        </div>
+
+        <!-- Turquoise barrier -->
+        <div class="barrier"></div>
+
+        <div class="question">
+            <p>3. Is there a point to this existence?</p>
+        </div>
+        <div class="question">
+            <button onclick="toggleInputBox(this)">Answer</button>
+            <button onclick="togglefollow(this)">Follow</button>
+            <button onclick="togglepass(this)">Pass</button>
+        </div>
+
+        <!-- Turquoise barrier -->
+        <div class="barrier"></div>
+
+        <div class="question">
+            <p>4. Is murder really wrong?</p>
+        </div>
+        <div class="question">
+            <button onclick="toggleInputBox(this)">Answer</button>
+            <button onclick="togglefollow(this)">Follow</button>
+            <button onclick="togglepass(this)">Pass</button>
+        </div>
+        <!-- Repeat the above div for more questions -->
+    </div>
+
+    <script>
+        function toggleInputBox(button) {
+            const inputBox = button.parentElement.querySelector('input[type="text"]');
+            if (inputBox) {
+                inputBox.remove();
+            } else {
+                const newInputBox = document.createElement('input');
+                newInputBox.setAttribute('type', 'text');
+                newInputBox.setAttribute('placeholder', 'Type your answer');
+                button.parentElement.appendChild(newInputBox);
+            }
+        }
+
+        function togglefollow(button) {
+            button.textContent = button.textContent === 'Following' ? 'Follow' : 'Following';
+        }
+
+        function togglepass(button) {
+            if (button.style.backgroundColor === 'red') {
+                button.style.backgroundColor = ''; // Change back to normal color
+            } else {
+                button.style.backgroundColor = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
